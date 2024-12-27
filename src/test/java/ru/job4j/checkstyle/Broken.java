@@ -7,6 +7,7 @@ public class Broken {
     String name;
 
     Broken() { }
+
     void echo() {
     }
 
