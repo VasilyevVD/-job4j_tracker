@@ -29,4 +29,3 @@ public class Error {
         notError.printInfo();
     }
 }
-
