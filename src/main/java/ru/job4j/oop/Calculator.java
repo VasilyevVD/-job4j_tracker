@@ -31,11 +31,11 @@ public class Calculator {
         Calculator calculator = new Calculator();
         int result2 = calculator.multiply(5);
         System.out.println(result2);
-        Calculator calculator1 =new Calculator();
+        Calculator calculator1 = new Calculator();
         int result3 = calculator1.divide(1);
         System.out.println(result3);
         Calculator calculator2 = new Calculator();
-        int result4= calculator2.sumAllOperation(3);
+        int result4 = calculator2.sumAllOperation(3);
         System.out.println(result4);
     }
 }
