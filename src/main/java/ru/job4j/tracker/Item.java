@@ -6,10 +6,9 @@ import java.time.format.DateTimeFormatter;
 public class Item {
     private int id;
     private String name;
-    private LocalDateTime created;
+    private LocalDateTime created = LocalDateTime.now();
 
     public Item() {
-        this.created = LocalDateTime.now();
     }
 
     public Item(String name) {
@@ -39,15 +38,5 @@ public class Item {
 
     public LocalDateTime getCreated() {
         return created;
-    }
-
-    public class StarUI {
-        public static void main(String[] args) {
-            Item item = new Item();
-            LocalDateTime created = item.getCreated();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
-            String formattedDate = created.format(formatter);
-            System.out.println(formattedDate);
-        }
     }
 }
