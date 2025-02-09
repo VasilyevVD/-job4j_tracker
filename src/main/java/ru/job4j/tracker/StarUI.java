@@ -10,5 +10,8 @@ public class StarUI {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
         String formattedDate = created.format(formatter);
         System.out.println(formattedDate);
+
+        Item item1 = new Item();
+        System.out.println(item1);
     }
 }
