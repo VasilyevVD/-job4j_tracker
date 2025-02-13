@@ -11,6 +11,7 @@ public class FileStore implements Store {
 
     public void save(String data) {
     }
+
     public String read() {
         return null;
     }
