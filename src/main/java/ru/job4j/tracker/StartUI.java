@@ -1,6 +1,6 @@
 package ru.job4j.tracker;
 
-public class StarUI {
+public class StartUI {
     public void init(Input input, Tracker tracker) {
        boolean run = true;
        while (run) {
@@ -104,6 +104,6 @@ public class StarUI {
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        new StarUI().init(input, tracker);
+        new StartUI().init(input, tracker);
     }
 }
