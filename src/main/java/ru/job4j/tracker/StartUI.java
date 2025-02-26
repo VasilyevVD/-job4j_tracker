@@ -25,7 +25,6 @@ public class StartUI {
     }
 
     public static void findAllItems(Tracker tracker) {
-        System.out.println("== Вывод всех звявок ==");
         Item[] items = tracker.findAll();
         if (items.length > 0) {
             for (Item item : items) {
@@ -37,9 +36,8 @@ public class StartUI {
     }
 
     public static void replaceItem(Input input, Tracker tracker) {
-        System.out.println("=== Edit item ===");
         int id = input.askInt("Введите id: ");
-        String name = input.askStr("Введите имя: ");
+        String name = input.askStr("Введите новое имя: ");
         Item item = new Item(name);
         tracker.replace(id, item);
         if (tracker.replace(id, item)) {
@@ -50,7 +48,6 @@ public class StartUI {
     }
 
     public static void findItemByName(Input input, Tracker tracker) {
-        System.out.println("=== Вывод заявок по имени ===");
         String name = input.askStr("Введите имя: ");
         Item[] items = tracker.findByName(name);
         if (items.length > 0) {
@@ -63,7 +60,6 @@ public class StartUI {
     }
 
     public static void findItemById(Input input, Tracker tracker) {
-        System.out.println("=== Вывод заявки по id ===");
         int id = input.askInt("Введите id: ");
         Item item = tracker.findById(id);
         if (item != null) {
@@ -74,7 +70,6 @@ public class StartUI {
     }
 
     public static void deleteItem(Input input, Tracker tracker) {
-        System.out.println("=== Удаление заявки ===");
         int id = input.askInt("Введите id: ");
         Item item = tracker.findById(id);
         tracker.delete(id);
@@ -82,7 +77,6 @@ public class StartUI {
     }
 
     public static void creatItem(Input input, Tracker tracker) {
-        System.out.println("=== Создание новой заявки ===");
         String name = input.askStr("Введите имя: ");
         Item item = new Item(name);
         tracker.add(item);
