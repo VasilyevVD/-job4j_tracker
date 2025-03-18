@@ -14,26 +14,6 @@ public class PasswordValidator {
                     "Password should be length [8, 32]"
             );
         }
-        if (!password.matches(".*[A-Z].*")) {
-            throw new IllegalArgumentException(
-                    "Password should contain at least one uppercase letter"
-            );
-        }
-        if (!password.matches(".*[a-z].*")) {
-            throw new IllegalArgumentException(
-                    "Password should contain at least one lowercase letter"
-            );
-        }
-        if (!password.matches(".*\\d.*")) {
-            throw new IllegalArgumentException(
-                    "Password should contain at least one figure"
-            );
-        }
-        if (!password.matches(".*[^a-zA-Z0-9].*")) {
-            throw new IllegalArgumentException(
-                    "Password should contain at least one special symbol"
-            );
-        }
         String lowerCasePassword = password.toLowerCase();
         for (String forbidden : FORBIDDEN) {
             if (lowerCasePassword.contains(forbidden)) {
@@ -47,6 +27,7 @@ public class PasswordValidator {
         boolean hasLowCase = false;
         boolean hasDigit = false;
         boolean hasSpecial = false;
+
         for (char symbol : password.toCharArray()) {
             if (Character.isUpperCase(symbol)) {
                 hasUpCase = true;
@@ -60,7 +41,11 @@ public class PasswordValidator {
             if (!Character.isLetterOrDigit(symbol)) {
                 hasSpecial = true;
             }
+            if (hasUpCase && hasLowCase && hasDigit && hasSpecial) {
+                break;
             }
+        }
+
         if (!hasUpCase) {
             throw new IllegalArgumentException(
                     "Password should contain at least one uppercase letter"
