@@ -3,8 +3,19 @@ package ru.job4j.tracker;
 import java.util.Arrays;
 
 public class SingleTracker {
-
     private Tracker tracker = new Tracker();
+
+    private static SingleTracker instace = null;
+
+    private SingleTracker() {
+    }
+
+    public static SingleTracker getInstace() {
+        if (instace == null) {
+            instace = new SingleTracker();
+        }
+        return instace;
+    }
 
     public Item add(Item item) {
         return tracker.add(item);
