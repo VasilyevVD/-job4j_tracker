@@ -50,7 +50,7 @@ public class Tracker {
         for (int i = 0; i < items.size(); i++) {
             if (items.get(i).getId() == id) {
                 items.set(i, item);
-                break;
+                return true;
             }
         }
         return false;

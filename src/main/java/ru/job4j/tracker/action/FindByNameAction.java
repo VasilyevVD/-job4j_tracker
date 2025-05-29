@@ -24,7 +24,7 @@ public class FindByNameAction implements UserAction {
 
         String name = input.askStr("Введите имя: ");
         ArrayList<Item> items = tracker.findByName(name);
-        if (items.size() > 0) {
+        if (!items.isEmpty()) {
             for (Item item : items) {
                 output.println(item);
             }

@@ -22,7 +22,7 @@ public class FindAllAction implements UserAction {
     @Override
     public boolean execute(Input input, Tracker tracker) {
         ArrayList<Item> items = tracker.findAll();
-        if (items.size() > 0) {
+        if (!items.isEmpty()) {
             for (Item item : items) {
                 output.println(item);
             }
